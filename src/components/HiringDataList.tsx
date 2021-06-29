@@ -1,6 +1,7 @@
 import '../styles/HiringDataList.css';
 import { HiringData } from './Main';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import HiringDataCategory from './HiringDataCategory';
 
 interface HiringDataListProps {
   hiringData: HiringData[] | undefined;
@@ -15,10 +16,7 @@ const categorizeByListId = (hiringData: HiringData[]) => {
   hiringData.forEach((item) => {
     const { listId } = item;
     if (categorizedHiringData[listId]) {
-      categorizedHiringData[listId] = [
-        ...categorizedHiringData[listId],
-        item,
-      ];
+      categorizedHiringData[listId] = [...categorizedHiringData[listId], item];
     } else {
       categorizedHiringData[listId] = [item];
     }
@@ -39,13 +37,33 @@ const alphabetizeHiringData = (hiringData: HiringData[]) => {
 
 const HiringDataList: React.FC<HiringDataListProps> = ({ hiringData }) => {
   const [listIdData, setListIdData] = useState<any>();
-  if (hiringData) {
-    const alphabetizedData = alphabetizeHiringData(hiringData);
-    const categorizedHiringData = categorizeByListId(alphabetizedData);
-    setListIdData(categorizedHiringData)
-  }
 
-  return <div>Hiring Data List</div>;
+  useEffect(() => {
+    if (hiringData) {
+      const alphabetizedData = alphabetizeHiringData(hiringData);
+      const categorizedHiringData = categorizeByListId(alphabetizedData);
+      setListIdData(categorizedHiringData);
+    }
+  }, [hiringData]);
+
+  const hiringDataListDisplay =
+    listIdData &&
+    Object.values<HiringData[]>(listIdData).map((listIdCategory) => {
+      return (
+        <HiringDataCategory
+          key={`listId-${listIdCategory[0].listId}`}
+          categoryData={listIdCategory}
+        />
+      );
+    });
+    
+    console.log(hiringDataListDisplay)
+  return (
+    <div>
+      <h3>Hiring Data List</h3>
+      {hiringDataListDisplay}
+    </div>
+  );
 };
 
 export default HiringDataList;
