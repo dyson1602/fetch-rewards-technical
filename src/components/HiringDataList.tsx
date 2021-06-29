@@ -53,11 +53,11 @@ const HiringDataList: React.FC<HiringDataListProps> = ({ hiringData }) => {
         <HiringDataCategory
           key={`listId-${listIdCategory[0].listId}`}
           categoryData={listIdCategory}
+          name={`List Id - ${listIdCategory[0].listId}`}
         />
       );
     });
-    
-    console.log(hiringDataListDisplay)
+
   return (
     <div>
       <h3>Hiring Data List</h3>

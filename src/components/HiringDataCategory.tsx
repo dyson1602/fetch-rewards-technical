@@ -2,22 +2,21 @@ import '../styles/HiringDataCategory.css';
 import { HiringData } from '../types';
 
 export interface HiringDataCategoryProps {
-  key: string;
+  name: string;
   categoryData: HiringData[];
 }
 
 const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   categoryData,
+  name,
 }) => {
-  console.log(categoryData);
-
   const categoryItems = categoryData.map((item) => {
-    return <li>{item.name}</li>;
+    return <li key={item.id}>{item.name}</li>;
   });
 
   return (
     <div>
-      <h3>Hiring Category</h3>
+      <h3>{name}</h3>
       <ul>{categoryItems}</ul>
     </div>
   );
