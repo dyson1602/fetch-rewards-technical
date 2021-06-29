@@ -1,5 +1,6 @@
 import '../styles/Main.css';
 import { useState } from 'react';
+import HiringDataList from './HiringDataList';
 
 interface HiringData {
   id: number;
@@ -7,7 +8,7 @@ interface HiringData {
   name: string;
 }
 
-export const Main: React.FC = () => {
+const Main: React.FC = () => {
   const [hiringData, setHiringData] = useState<HiringData[]>();
 
   const fetchDataHandler = async () => {
@@ -22,6 +23,9 @@ export const Main: React.FC = () => {
     <div>
       <h2>Main</h2>
       <button onClick={fetchDataHandler}>Fetch data</button>
+      <HiringDataList />
     </div>
   );
 };
+
+export default Main;
