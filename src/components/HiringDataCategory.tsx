@@ -1,9 +1,15 @@
-import '../styles/HiringDataCategory.css'
+import '../styles/HiringDataCategory.css';
+import { HiringData } from './Main';
 
-const HiringDataCategory: React.FC<any> = () => {
-  return (
-    <div>Data category</div>
-  )
+interface HiringDataCategoryProps {
+  categoryData: HiringData[];
 }
 
-export default HiringDataCategory
+const HiringDataCategory: React.FC<HiringDataCategoryProps> = (
+  categoryData
+) => {
+  console.log(categoryData);
+  return <div>Data category</div>;
+};
+
+export default HiringDataCategory;
