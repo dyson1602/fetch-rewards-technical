@@ -24,7 +24,6 @@ const Main: React.FC = () => {
     setHiringData(filteredHiringData);
   };
 
-  console.log(hiringData)
   return (
     <div>
       <h2>Main</h2>
