@@ -8,6 +8,10 @@ interface HiringData {
   name: string;
 }
 
+const filterNamelessData = (hiringData: HiringData[]): HiringData[] => {
+  return hiringData.filter((item) => item.name);
+};
+
 const Main: React.FC = () => {
   const [hiringData, setHiringData] = useState<HiringData[]>();
 
@@ -16,9 +20,11 @@ const Main: React.FC = () => {
       'https://fetch-hiring.s3.amazonaws.com/hiring.json'
     );
     const data: HiringData[] = await response.json();
-    setHiringData(data);
+    const filteredHiringData = filterNamelessData(data);
+    setHiringData(filteredHiringData);
   };
 
+  console.log(hiringData)
   return (
     <div>
       <h2>Main</h2>
