@@ -44,6 +44,7 @@ const HiringDataList: React.FC<HiringDataListProps> = ({ hiringData }) => {
     const categorizedHiringData = categorizeByListId(alphabetizedData);
     setListIdData(categorizedHiringData)
   }
+
   return <div>Hiring Data List</div>;
 };
 
