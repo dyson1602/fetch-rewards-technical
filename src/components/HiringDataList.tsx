@@ -6,10 +6,22 @@ interface HiringDataListProps {
   hiringData: HiringData[] | undefined;
 }
 
+interface categorizedHiringData {
+  [listId: number]: HiringData[];
+}
+
 const categorizeByListId = (hiringData: HiringData[]) => {
-  const categorizedHiringData = {};
+  const categorizedHiringData: categorizedHiringData = {};
   hiringData.forEach((item) => {
-    // console.log(item);
+    const { listId } = item;
+    if (categorizedHiringData[listId]) {
+      categorizedHiringData[listId] = [
+        ...categorizedHiringData[listId],
+        item,
+      ];
+    } else {
+      categorizedHiringData[listId] = [item];
+    }
   });
   return categorizedHiringData;
 };
@@ -28,8 +40,9 @@ const alphabetizeHiringData = (hiringData: HiringData[]) => {
 const HiringDataList: React.FC<HiringDataListProps> = ({ hiringData }) => {
   const [listIdData, setListIdData] = useState<any>();
   if (hiringData) {
-    alphabetizeHiringData(hiringData);
-    // categorizeByListId(hiringData);
+    const alphabetizedData = alphabetizeHiringData(hiringData);
+    const categorizedHiringData = categorizeByListId(alphabetizedData);
+    setListIdData(categorizedHiringData)
   }
   return <div>Hiring Data List</div>;
 };
