@@ -13,7 +13,7 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   categoryData,
   name,
 }) => {
-  const [displayCount, setExpanded] = useState<number>(10);
+  const [displayCount, setDisplayCount] = useState<number>(10);
   const [visibleItems, setVisibleItems] = useState<JSX.Element[]>();
 
   useEffect(() => {
@@ -28,8 +28,8 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
     <div>
       <h3>{name}</h3>
       <ul>{visibleItems}</ul>
-      <button >Collapse</button>
-      <button onClick={() => setExpanded(displayCount + 10)}>
+      <button onClick={() => setDisplayCount(10)}>Collapse</button>
+      <button onClick={() => setDisplayCount(displayCount + 10)}>
         Show 10 More
       </button>
     </div>
