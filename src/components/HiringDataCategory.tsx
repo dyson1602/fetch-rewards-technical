@@ -1,6 +1,7 @@
 import '../styles/HiringDataCategory.css';
 import { useState } from 'react';
 import { HiringData } from '../types';
+import { useEffect } from 'react';
 
 export interface HiringDataCategoryProps {
   name: string;
@@ -12,18 +13,24 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   categoryData,
   name,
 }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [displayCount, setExpanded] = useState<number>(10);
+  const [visibleItems, setVisibleItems] = useState<JSX.Element[]>();
 
-  const categoryItems = categoryData.map((item) => {
-    return <li key={item.id}>{item.name}</li>;
-  });
+  useEffect(() => {
+    const filteredItems = categoryData.slice(0, displayCount);
+    const visibleElements = filteredItems.map((item) => {
+      return <li key={item.id}>{item.name}</li>;
+    });
+    setVisibleItems(visibleElements);
+  }, [displayCount]);
 
   return (
     <div>
       <h3>{name}</h3>
-      <ul>{categoryItems}</ul>
-      <button onClick={() => setExpanded(!expanded)}>
-        {expanded ? 'Collapse' : 'Expand'}
+      <ul>{visibleItems}</ul>
+      <button >Collapse</button>
+      <button onClick={() => setExpanded(displayCount + 10)}>
+        Show 10 More
       </button>
     </div>
   );
