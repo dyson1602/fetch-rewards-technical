@@ -6,6 +6,7 @@ export interface HiringDataCategoryProps {
   categoryData: HiringData[];
 }
 
+//Component that returns a list of all the hiring data in an array
 const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   categoryData,
   name,
