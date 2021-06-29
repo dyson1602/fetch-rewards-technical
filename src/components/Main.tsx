@@ -2,7 +2,7 @@ import '../styles/Main.css';
 import { useState } from 'react';
 import HiringDataList from './HiringDataList';
 
-interface HiringData {
+export interface HiringData {
   id: number;
   listId: number;
   name: string;
@@ -29,7 +29,7 @@ const Main: React.FC = () => {
     <div>
       <h2>Main</h2>
       <button onClick={fetchDataHandler}>Fetch data</button>
-      <HiringDataList />
+      <HiringDataList hiringData={hiringData}/>
     </div>
   );
 };

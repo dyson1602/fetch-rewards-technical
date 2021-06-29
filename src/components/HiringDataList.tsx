@@ -1,11 +1,13 @@
-import '../styles/HiringDataList.css'
+import '../styles/HiringDataList.css';
+import { HiringData } from './Main';
 
-const HiringDataList: React.FC = () => {
-  return (
-    <div>
-      Hiring Data List
-    </div>
-  )
+interface HiringDataListProps {
+  hiringData: HiringData[] | undefined;
 }
 
-export default HiringDataList
+const HiringDataList: React.FC<HiringDataListProps> = ({ hiringData }) => {
+  console.log('hiring data',hiringData)
+  return <div>Hiring Data List</div>;
+};
+
+export default HiringDataList;
