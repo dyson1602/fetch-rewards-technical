@@ -1,12 +1,7 @@
 import '../styles/Main.css';
 import { useState } from 'react';
 import HiringDataList from './HiringDataList';
-
-export interface HiringData {
-  id: number;
-  listId: number;
-  name: string;
-}
+import { HiringData } from '../types';
 
 const filterNamelessData = (hiringData: HiringData[]): HiringData[] => {
   return hiringData.filter((item) => item.name);
@@ -28,7 +23,7 @@ const Main: React.FC = () => {
     <div>
       <h2>Main</h2>
       <button onClick={fetchDataHandler}>Fetch data</button>
-      <HiringDataList hiringData={hiringData}/>
+      <HiringDataList hiringData={hiringData} />
     </div>
   );
 };

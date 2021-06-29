@@ -1,7 +1,7 @@
 import '../styles/HiringDataCategory.css';
-import { HiringData } from './Main';
+import { HiringData } from '../types';
 
-interface HiringDataCategoryProps {
+export interface HiringDataCategoryProps {
   key: string;
   categoryData: HiringData[];
 }

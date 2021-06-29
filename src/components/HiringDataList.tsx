@@ -1,14 +1,14 @@
 import '../styles/HiringDataList.css';
-import { HiringData } from './Main';
+import { HiringData } from '../types';
 import { useState, useEffect } from 'react';
 import HiringDataCategory from './HiringDataCategory';
 
-interface HiringDataListProps {
-  hiringData: HiringData[] | undefined;
+export interface categorizedHiringData {
+  [listId: number]: HiringData[];
 }
 
-interface categorizedHiringData {
-  [listId: number]: HiringData[];
+export interface HiringDataListProps {
+  hiringData: HiringData[] | undefined;
 }
 
 const categorizeByListId = (hiringData: HiringData[]) => {
