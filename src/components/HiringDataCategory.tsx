@@ -16,7 +16,7 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   const [displayCount, setDisplayCount] = useState<number>(10);
   const [visibleItems, setVisibleItems] = useState<JSX.Element[]>();
   const divRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const filteredItems = categoryData.slice(0, displayCount);
@@ -26,26 +26,28 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
     setVisibleItems(visibleElements);
   }, [displayCount]);
 
-  const isOnScreen = () => {
-    if(){
-      const currentPosition = .current.offsetTop()
-    }
-  }
-  
-  const scrollToTop = () => {
+  const collapseHandler = () => {
     const current = divRef.current;
     if (current) {
-      current.scrollIntoView({ behavior: 'smooth'});
+      current.scrollIntoView({ behavior: 'smooth' });
     }
-    setDisplayCount(10)
+    setDisplayCount(10);
+  };
+
+  const expandHandler = () => {
+    if (buttonRef.current) {
+      const currentPosition = buttonRef.current.offsetTop;
+      
+    }
+    setDisplayCount(displayCount + 10);
   };
 
   return (
     <div ref={divRef}>
       <h3>{name}</h3>
       <ul>{visibleItems}</ul>
-      <button onClick={scrollToTop}>Collapse</button>
-      <button ref={buttonRef} onClick={() => setDisplayCount(displayCount + 10)}>
+      <button onClick={collapseHandler}>Collapse</button>
+      <button ref={buttonRef} onClick={expandHandler}>
         Show 10 More
       </button>
     </div>
