@@ -6,6 +6,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   list-style-type: none;
+  padding: 0px;
 }
 
 .collapse-button {
@@ -54,5 +55,7 @@
 .category-card:hover {
   -webkit-box-shadow: 0 2px 4px 0;
           box-shadow: 0 2px 4px 0;
+  height: 36px;
+  width: 125px;
 }
 /*# sourceMappingURL=HiringDataCategory.css.map */
