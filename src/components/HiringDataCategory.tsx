@@ -16,6 +16,7 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   const [displayCount, setDisplayCount] = useState<number>(10);
   const [visibleItems, setVisibleItems] = useState<JSX.Element[]>();
   const divRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const filteredItems = categoryData.slice(0, displayCount);
@@ -25,6 +26,12 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
     setVisibleItems(visibleElements);
   }, [displayCount]);
 
+  const isOnScreen = () => {
+    if(){
+      const currentPosition = .current.offsetTop()
+    }
+  }
+  
   const scrollToTop = () => {
     const current = divRef.current;
     if (current) {
@@ -38,7 +45,7 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
       <h3>{name}</h3>
       <ul>{visibleItems}</ul>
       <button onClick={scrollToTop}>Collapse</button>
-      <button onClick={() => setDisplayCount(displayCount + 10)}>
+      <button ref={buttonRef} onClick={() => setDisplayCount(displayCount + 10)}>
         Show 10 More
       </button>
     </div>
