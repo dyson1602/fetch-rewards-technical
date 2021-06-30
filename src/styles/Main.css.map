@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,gBAAgB;EACxB,gBAAgB,ECLF,SAAS;CDKoB",
+    "mappings": "AAMA,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,gBAAgB;EACxB,gBAAgB,ECTF,SAAS;CDSoB",
     "sources": [
         "Main.sass",
         "Variables.sass"
