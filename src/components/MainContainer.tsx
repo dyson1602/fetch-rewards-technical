@@ -24,7 +24,7 @@ const MainContainer: React.FC = () => {
 
   return (
     <div className="main">
-      <div>
+      <div >
         <button onClick={fetchDataHandler}>Fetch data</button>
         <HiringDataList hiringData={hiringData} />
       </div>
