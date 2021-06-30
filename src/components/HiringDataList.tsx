@@ -1,4 +1,3 @@
-import '../styles/HiringDataList.css';
 import { HiringData } from '../types';
 import { useState, useEffect } from 'react';
 import HiringDataCategory from './HiringDataCategory';
