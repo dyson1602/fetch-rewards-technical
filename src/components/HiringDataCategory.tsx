@@ -2,6 +2,7 @@ import '../styles/HiringDataCategory.css';
 import { useState } from 'react';
 import { HiringData } from '../types';
 import { useEffect, useRef } from 'react';
+import { getWindowDimensions } from '../hooks/getWindowDimensions';
 
 export interface HiringDataCategoryProps {
   name: string;
