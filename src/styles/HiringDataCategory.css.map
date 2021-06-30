@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AACE,oBADkB,CAClB,EAAE,CAAC;EACD,eAAe,EAAE,IAAI;EACrB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;CAAG;;AAEhB,AAAA,gBAAgB,CAAC;EACf,MAAM,EAAE,GAAG;EACX,gBAAgB,ECNF,OAAO;EDOrB,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,OAAO;EACf,aAAa,EAAE,GAAG;CAAG;;AAEvB,AAAA,iBAAiB,CAAC;EAChB,MAAM,EAAE,GAAG;EACX,gBAAgB,ECjBL,SAAS;EDkBpB,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,OAAO;EAClB,MAAM,EAAE,OAAO;EACf,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,GAAG;CAAG",
     "sources": [
-        "HiringDataCategory.sass"
+        "HiringDataCategory.sass",
+        "Variables.sass"
     ],
     "names": [],
     "file": "HiringDataCategory.css"

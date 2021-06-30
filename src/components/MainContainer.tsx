@@ -25,6 +25,7 @@ const MainContainer: React.FC = () => {
   return (
     <div className="main">
       <div >
+        <h1>Fetch Rewards Technical Assessment</h1>
         <button onClick={fetchDataHandler}>Fetch data</button>
         <HiringDataList hiringData={hiringData} />
       </div>

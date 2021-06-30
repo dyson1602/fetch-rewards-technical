@@ -1,1 +1,25 @@
-/* No CSS *//*# sourceMappingURL=HiringDataCategory.css.map */
+.category-list-items li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.collapse-button {
+  margin: 5px;
+  background-color: #BBB4B8;
+  border: none;
+  font-size: large;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.show-more-button {
+  margin: 5px;
+  background-color: #E71C79ff;
+  border: none;
+  font-size: x-large;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px;
+}
+/*# sourceMappingURL=HiringDataCategory.css.map */
