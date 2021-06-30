@@ -3,9 +3,8 @@ import { useState } from 'react';
 import HiringDataList from './HiringDataList';
 import { HiringData } from '../types';
 
-
-//Takes in raw json data from the API and filters out any objects that have a 
-// falsey value for the name property. This includes null and empty strings. 
+//Takes in raw json data from the API and filters out any objects that have a
+// falsey value for the name property. This includes null and empty strings.
 const filterNamelessData = (hiringData: HiringData[]): HiringData[] => {
   return hiringData.filter((item) => item.name);
 };
@@ -24,10 +23,11 @@ const MainContainer: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>Main</h2>
-      <button onClick={fetchDataHandler}>Fetch data</button>
-      <HiringDataList hiringData={hiringData} />
+    <div className="main">
+      <div>
+        <button onClick={fetchDataHandler}>Fetch data</button>
+        <HiringDataList hiringData={hiringData} />
+      </div>
     </div>
   );
 };
