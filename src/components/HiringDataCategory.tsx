@@ -1,7 +1,7 @@
 import '../styles/HiringDataCategory.css';
 import { useState } from 'react';
 import { HiringData } from '../types';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export interface HiringDataCategoryProps {
   name: string;
@@ -15,6 +15,7 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
 }) => {
   const [displayCount, setDisplayCount] = useState<number>(10);
   const [visibleItems, setVisibleItems] = useState<JSX.Element[]>();
+  const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const filteredItems = categoryData.slice(0, displayCount);
@@ -24,11 +25,19 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
     setVisibleItems(visibleElements);
   }, [displayCount]);
 
+  const scrollToTop = () => {
+    const current = divRef.current;
+    if (current) {
+      current.scrollIntoView({ behavior: 'smooth'});
+    }
+    setDisplayCount(10)
+  };
+
   return (
-    <div>
+    <div ref={divRef}>
       <h3>{name}</h3>
       <ul>{visibleItems}</ul>
-      <button onClick={() => setDisplayCount(10)}>Collapse</button>
+      <button onClick={scrollToTop}>Collapse</button>
       <button onClick={() => setDisplayCount(displayCount + 10)}>
         Show 10 More
       </button>
