@@ -1,12 +1,9 @@
 @import './Variables'
   
 .category-list-items
-  li
-    list-style-type: none
-    padding: 0
-    margin: 0
-    display: flex
-    justify-content: center
+  display: flex
+  justify-content: center
+  list-style-type: none
 
 .collapse-button
   margin: 5px
@@ -15,6 +12,10 @@
   font-size: large
   cursor: pointer
   border-radius: 4px
+  box-shadow: 0 1px 2px 0
+  &:hover
+    box-shadow: 0 2px 4px 0
+
 
 .show-more-button
   margin: 5px
@@ -24,6 +25,9 @@
   cursor: pointer
   border-radius: 4px
   padding: 4px
+  box-shadow: 0 1px 2px 0
+  &:hover
+    box-shadow: 0 2px 4px 0
 
 .category-card
   background-color: $white
@@ -32,6 +36,5 @@
   width: 100px
   margin: 5px
   box-shadow: 0 1px 2px 0
-  
   &:hover
     box-shadow: 0 2px 4px 0

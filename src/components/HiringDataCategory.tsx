@@ -24,7 +24,11 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   useEffect(() => {
     const filteredItems = categoryData.slice(0, displayCount);
     const visibleElements = filteredItems.map((item) => {
-      return <li key={item.id}><div className="category-card">{item.name}</div></li>;
+      return (
+        <li key={item.id}>
+          <div className="category-card">{item.name}</div>
+        </li>
+      );
     });
     setVisibleItems(visibleElements);
   }, [displayCount]);
@@ -62,7 +66,9 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   return (
     <div ref={divRef}>
       <h3>{name}</h3>
-      <ul className="category-list-items">{visibleItems}</ul>
+      <ul className="category-list-items">
+        <div>{visibleItems}</div>
+      </ul>
       <div className="category-buttons-container">
         <button className="collapse-button" onClick={collapseHandler}>
           Collapse

@@ -1,13 +1,11 @@
-.category-list-items li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.category-list-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  list-style-type: none;
 }
 
 .collapse-button {
@@ -17,6 +15,13 @@
   font-size: large;
   cursor: pointer;
   border-radius: 4px;
+  -webkit-box-shadow: 0 1px 2px 0;
+          box-shadow: 0 1px 2px 0;
+}
+
+.collapse-button:hover {
+  -webkit-box-shadow: 0 2px 4px 0;
+          box-shadow: 0 2px 4px 0;
 }
 
 .show-more-button {
@@ -27,6 +32,13 @@
   cursor: pointer;
   border-radius: 4px;
   padding: 4px;
+  -webkit-box-shadow: 0 1px 2px 0;
+          box-shadow: 0 1px 2px 0;
+}
+
+.show-more-button:hover {
+  -webkit-box-shadow: 0 2px 4px 0;
+          box-shadow: 0 2px 4px 0;
 }
 
 .category-card {
