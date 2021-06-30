@@ -17,7 +17,7 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   const [displayCount, setDisplayCount] = useState<number>(10);
   const [visibleItems, setVisibleItems] = useState<JSX.Element[]>();
   const divRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
 
   //Two separate useEffect calls, because scrollCheck() must be called with the
   // new y-coordinates after the visibleItems have been rerendered.
@@ -54,11 +54,11 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
       if (divHeight < screenTop) {
         divRef.current.scrollIntoView({ behavior: 'smooth' });
       }
-    } else if (displayCount > 10 && buttonRef.current) {
-      const buttonHeight = buttonRef.current.offsetTop;
+    } else if (displayCount > 10 && buttonsRef.current) {
+      const buttonHeight = buttonsRef.current.offsetTop;
       const { height, screenTop } = getWindowDimensions();
-      if (buttonHeight > screenTop + height) {
-        buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      if (buttonHeight > screenTop + height - 50) {
+        buttonsRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
       }
     }
   };
@@ -69,15 +69,11 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
       <ul className="category-list-items">
         <div className="items-div">{visibleItems}</div>
       </ul>
-      <div className="category-buttons-container">
+      <div ref={buttonsRef} className="category-buttons-div">
         <button className="collapse-button" onClick={collapseHandler}>
           Collapse
         </button>
-        <button
-          className="show-more-button"
-          ref={buttonRef}
-          onClick={expandHandler}
-        >
+        <button className="show-more-button" onClick={expandHandler}>
           Show 10 More
         </button>
       </div>

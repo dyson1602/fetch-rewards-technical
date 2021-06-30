@@ -9,6 +9,10 @@
   padding: 0px;
 }
 
+.category-buttons-div {
+  height: 75px;
+}
+
 .collapse-button {
   margin: 5px;
   background-color: #BBB4B8;
