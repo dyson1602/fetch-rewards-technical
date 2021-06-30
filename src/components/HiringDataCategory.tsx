@@ -24,7 +24,7 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   useEffect(() => {
     const filteredItems = categoryData.slice(0, displayCount);
     const visibleElements = filteredItems.map((item) => {
-      return <li key={item.id}>{item.name}</li>;
+      return <li key={item.id}><div className="category-card">{item.name}</div></li>;
     });
     setVisibleItems(visibleElements);
   }, [displayCount]);
