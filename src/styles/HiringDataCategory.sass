@@ -6,6 +6,9 @@
   list-style-type: none
   padding: 0px
 
+.items-div
+  
+
 .collapse-button
   margin: 5px
   background-color: $secondary-button-color
@@ -31,13 +34,18 @@
     box-shadow: 0 2px 4px 0
 
 .category-card
+  display: flex
+  justify-content: center
+  align-content: center
+  flex-direction: column
   background-color: $white
   color: $russian-violet
   height: 24px
   width: 100px
-  margin: 5px
+  margin: 5px auto 5px auto
   box-shadow: 0 1px 2px 0
   &:hover
-    box-shadow: 0 2px 4px 0
-    height: 36px
+    box-shadow: 0 2px 5px 0
     width: 125px
+    margin-bottom: 6px
+    margin-top: 0px

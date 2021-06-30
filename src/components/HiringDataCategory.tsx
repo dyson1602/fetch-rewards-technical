@@ -67,7 +67,7 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
     <div ref={divRef}>
       <h3>{name}</h3>
       <ul className="category-list-items">
-        <div>{visibleItems}</div>
+        <div className="items-div">{visibleItems}</div>
       </ul>
       <div className="category-buttons-container">
         <button className="collapse-button" onClick={collapseHandler}>
