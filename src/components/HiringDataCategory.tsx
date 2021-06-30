@@ -19,6 +19,8 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
   const divRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  //Two separate useEffect calls, because scrollCheck() must be called with the
+  // new y-coordinates after the visibleItems have been rerendered.
   useEffect(() => {
     const filteredItems = categoryData.slice(0, displayCount);
     const visibleElements = filteredItems.map((item) => {
@@ -39,6 +41,8 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
     setDisplayCount(displayCount + 10);
   };
 
+  //On Collapse, scrolls back to top of the listId category if it is off the
+  // screen. On 'Show 10 more' scrolls to show buttons if they are off screen.
   const scrollCheck = () => {
     if (displayCount === 10 && divRef.current) {
       const divHeight = divRef.current.offsetTop;
