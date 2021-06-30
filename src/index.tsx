@@ -1,11 +1,11 @@
-import './index.css'
+import './index.css';
 import ReactDOM from 'react-dom';
 import MainContainer from './components/MainContainer';
 
 const App = () => {
   return (
-    <div >
-        <MainContainer />
+    <div>
+      <MainContainer />
     </div>
   );
 };

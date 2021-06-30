@@ -56,7 +56,7 @@ const HiringDataList: React.FC<HiringDataListProps> = ({ hiringData }) => {
   }, [hiringData]);
 
   //Check if listIdData is truthy (contains objects) so that .values() doesn't
-  // throw an error looking for values of 'undefined'. Returns an array of 
+  // throw an error looking for values of 'undefined'. Returns an array of
   // HiringDataCategory components sorted in order of listId.
   const hiringDataListDisplay =
     listIdData &&
@@ -71,12 +71,7 @@ const HiringDataList: React.FC<HiringDataListProps> = ({ hiringData }) => {
       );
     });
 
-  return (
-    <div>
-      <h3>Hiring Data List</h3>
-      {hiringDataListDisplay}
-    </div>
-  );
+  return <div style={{ height: '100%' }}>{hiringDataListDisplay}</div>;
 };
 
 export default HiringDataList;

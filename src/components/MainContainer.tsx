@@ -1,4 +1,5 @@
-import '../styles/Main.css';
+import '../styles/MainContainer.css';
+import fetchLogo from '../assets/images/fetch-rewards.jpeg';
 import { useState } from 'react';
 import HiringDataList from './HiringDataList';
 import { HiringData } from '../types';
@@ -24,9 +25,12 @@ const MainContainer: React.FC = () => {
 
   return (
     <div className="main">
-      <div >
+      <div>
         <h1>Fetch Rewards Technical Assessment</h1>
-        <button onClick={fetchDataHandler}>Fetch data</button>
+        <button id="fetch-data-button" onClick={fetchDataHandler}>
+            <img src={fetchLogo} />
+            FETCH DATA
+        </button>
         <HiringDataList hiringData={hiringData} />
       </div>
     </div>
