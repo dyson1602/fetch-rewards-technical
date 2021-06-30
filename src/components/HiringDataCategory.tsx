@@ -25,10 +25,13 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
       return <li key={item.id}>{item.name}</li>;
     });
     setVisibleItems(visibleElements);
-    scrollCheck();
   }, [displayCount]);
 
-  const collapseHandler = () => {   
+  useEffect(() => {
+    scrollCheck();
+  }, [visibleItems]);
+
+  const collapseHandler = () => {
     setDisplayCount(10);
   };
 
@@ -40,16 +43,14 @@ const HiringDataCategory: React.FC<HiringDataCategoryProps> = ({
     if (displayCount === 10 && divRef.current) {
       const divHeight = divRef.current.offsetTop;
       const { screenTop } = getWindowDimensions();
-      console.log(divHeight, screenTop)
       if (divHeight < screenTop) {
         divRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     } else if (displayCount > 10 && buttonRef.current) {
       const buttonHeight = buttonRef.current.offsetTop;
       const { height, screenTop } = getWindowDimensions();
-      console.log("buttonheight", buttonHeight, "screenTOp + height", screenTop + height)
-      if (buttonHeight > (screenTop + height)) {
-        buttonRef.current.scrollIntoView({ behavior: 'smooth' });
+      if (buttonHeight > screenTop + height) {
+        buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
       }
     }
   };
